@@ -10,7 +10,8 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Клонирование репозитория
-                git branch: 'master', url: 'https://github.com/RodionKekhayev0ne/devopslessons.git'
+                git branch: 'main', url: 'https://github.com/RodionKekhayev0ne/devopslessons.git'
+                echo 'git cloned !!!'
             }
         }
 
@@ -19,6 +20,7 @@ pipeline {
                 // Установка виртуального окружения и активация
                 sh 'python3 -m venv $VENV_DIR'
                 sh '. $VENV_DIR/bin/activate'
+                echo 'env acvate !!!'
             }
         }
 
